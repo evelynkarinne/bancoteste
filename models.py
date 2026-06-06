@@ -4,7 +4,7 @@ db = SQLAlchemy()
 
 
 class Departamento(db.Model):
-    __tablename__ = "departamentos"
+    __tablename__ = "departamento"
 
     codigo = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String(100), nullable=False)
@@ -26,7 +26,7 @@ class Departamento(db.Model):
 
 
 class Colaborador(db.Model):
-    __tablename__ = "colaboradores"
+    __tablename__ = "colaborador"
 
     matricula = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String(100), nullable=False)
