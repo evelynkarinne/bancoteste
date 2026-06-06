@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Colaboradores</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Lista de Colaboradores</h1>
+    <div class="voltar">
+        <a href="/">← Voltar para a página inicial</a>
+    </div>
+    <table>
+        <tr>
+            <th>Matrícula</th>
+            <th>Nome</th>
+            <th>Salário</th>
+            <th>E-mail</th>
+            <th>Endereço</th>
+            <th>Departamento</th>
+        </tr>
+
+        {% for colaborador in colaboradores %}
+            <tr>
+                <td>{{ colaborador.matricula }}</td>
+                <td>{{ colaborador.nome }}</td>
+                <td>R$ {{ "%.2f"|format(colaborador.salario) }}</td>
+                <td>{{ colaborador.email }}</td>
+                <td>{{ colaborador.endereco }}</td>
+                <td>{{ colaborador.departamento.nome }}</td>
+            </tr>
+            {% endfor %}
+
+    </table>
+
+</div>
+
+</body>
+</html>
