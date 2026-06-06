@@ -36,7 +36,7 @@ class Colaborador(db.Model):
 
     codigo_dp = db.Column(
         db.Integer,
-        db.ForeignKey("departamentos.codigo"),
+        db.ForeignKey("departamento.codigo"),
         nullable=False
     )
 
